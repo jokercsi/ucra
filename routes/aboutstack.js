@@ -15,7 +15,6 @@ const screens = {
 };
 
 /*about header design*/
-
 const AboutStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerTintColor: "#fff",

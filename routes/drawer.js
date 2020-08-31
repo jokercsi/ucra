@@ -5,11 +5,11 @@ import AboutStack from "./aboutstack";
 import HomeStack from "./homestack";
 
 const RootDraweNavigator = createDrawerNavigator({
+  Account: {
+    screen: AboutStack,
+  },
   Home: {
     screen: HomeStack,
-  },
-  About: {
-    screen: AboutStack,
   },
 });
 
