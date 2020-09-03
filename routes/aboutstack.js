@@ -1,6 +1,6 @@
 import { createStackNavigator } from "react-navigation-stack";
 import About from "../screens/about";
-import Header from "../shared/header";
+import MenuButton from "../shared/menuButton";
 import React from "react";
 
 const screens = {
@@ -8,7 +8,9 @@ const screens = {
     screen: About,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: () => <Header navigation={navigation} />,
+        headerTitle: "UCRA",
+        headerLeft: <MenuButton navigation={navigation} />,
+        headerTitleStyle: { fontSize: 20, letterSpacing: 2 },
       };
     },
   },
