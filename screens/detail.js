@@ -14,8 +14,39 @@ export default class Detail extends Component {
             {this.props.navigation.getParam("name")}
           </Text>
         </View>
-        <View style={styles.menuWrap}>
+        <View style={styles.menuContainer}>
           <Text style={{ fontSize: 15 }}>메뉴</Text>
+          <View style={styles.menuWrap}>
+            <View style={styles.menubox}>
+              <Image
+                source={{ uri: this.props.navigation.getParam("menuImg1") }}
+                style={styles.menuImageSize}
+              />
+              <Text>{this.props.navigation.getParam("menu1")}</Text>
+            </View>
+            <View style={styles.menubox}>
+              <Image
+                source={{ uri: this.props.navigation.getParam("menuImg2") }}
+                style={styles.menuImageSize}
+              />
+              <Text>{this.props.navigation.getParam("menu2")}</Text>
+            </View>
+
+            <View style={styles.menubox}>
+              <Image
+                source={{ uri: this.props.navigation.getParam("menuImg3") }}
+                style={styles.menuImageSize}
+              />
+              <Text>{this.props.navigation.getParam("menu3")}</Text>
+            </View>
+            <View style={styles.menubox}>
+              <Image
+                source={{ uri: this.props.navigation.getParam("menuImg4") }}
+                style={styles.menuImageSize}
+              />
+              <Text>{this.props.navigation.getParam("menu4")}</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.buttonWrap}>
           <TouchableOpacity
@@ -46,9 +77,26 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 17,
   },
-  menuWrap: {
+  menuContainer: {
+    flex: 1,
     backgroundColor: "#fff",
     marginBottom: 15,
+  },
+  menuWrap: {
+    flex: 1,
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+    flexDirection: "row",
+    padding: 12,
+    backgroundColor: "#333",
+  },
+  menubox: {
+    width: "50%",
+    backgroundColor: "#fff",
+  },
+  menuImageSize: {
+    width: "100%",
+    height: 150,
   },
   buttonWrap: {
     bottom: 0,
