@@ -1,32 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 
-export default function Detail({ navigation }) {
-  return (
-    <View style={{ flex: 1 }}>
-      <Image
-        source={{ uri: navigation.getParam("uri") }}
-        style={styles.imageSize}
-      />
-      <Text style={{ textAlign: "center" }}>{navigation.getParam("name")}</Text>
-      <View style={styles.buttonWrap}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            navigation.navigate("Reservation");
-          }}
-        >
-          <Text style={styles.buttonText}>예약하기</Text>
-        </TouchableOpacity>
+export default class Detail extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <View style={styles.imageWrap}>
+          <Image
+            source={{ uri: this.props.navigation.getParam("uri") }}
+            style={styles.imageSize}
+          />
+          <Text style={styles.cafeTitle}>
+            {this.props.navigation.getParam("name")}
+          </Text>
+        </View>
+        <View style={styles.menuWrap}>
+          <Text style={{ fontSize: 15 }}>메뉴</Text>
+        </View>
+        <View style={styles.buttonWrap}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              this.props.navigation.navigate("Reservation");
+            }}
+          >
+            <Text style={styles.buttonText}>예약하기</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
+  imageWrap: {
+    backgroundColor: "#fff",
+    marginBottom: 15,
+  },
   imageSize: {
     width: "100%",
-    height: 350,
+    height: 300,
+  },
+  cafeTitle: {
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 17,
+  },
+  menuWrap: {
+    backgroundColor: "#fff",
+    marginBottom: 15,
   },
   buttonWrap: {
     bottom: 0,
@@ -45,5 +67,10 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "center",
     fontSize: 20,
+  },
+
+  menuSize: {
+    width: 60,
+    height: 50,
   },
 });
