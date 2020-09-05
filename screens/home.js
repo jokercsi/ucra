@@ -32,7 +32,7 @@ export default class Home extends Component {
           name: "튠업 카페 TUNE UP COFFEE ",
           tag: ["경희대감성", "공부하기좋은카페", "조용한카페", "다인석"],
           uri:
-            "http://blogfiles.naver.net/MjAxODA5MTNfMjQ4/MDAxNTM2NzcxODAxNTkx.Cvo59zJg6y5NQiDP-AXUrbEg0fwlKsEtmgfA2q9-waAg.Mxkv_PlLztIgNcb5CUSJqWkCMVzbj4AdKXZpzRyuSysg.JPEG.fkvkdpffktmd/P20180910_185423497_5CB8ADC9-0028-4A0B-A165-7191D2CE6671.jpg",
+            "http://blogfiles.naver.net/MjAxODExMDVfMjk0/MDAxNTQxNDI1MzQzMjMx.1BcQEqtRGn_vkPCyYMqgM3YUAHnp8rvrp0MyFI80TSMg.SDw_jTkwQQUweChePWfEgnlryBOqsf0yhiieonN5_cwg.JPEG.cheery_je/IMG_0070.jpg",
           menu: ["커피", "커피", "커피", "커피"],
           menu1: "크림라떼",
           menu2: "카페라떼",

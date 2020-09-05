@@ -1,53 +1,66 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 
 export default class Detail extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={styles.imageWrap}>
-          <Image
-            source={{ uri: this.props.navigation.getParam("uri") }}
-            style={styles.imageSize}
-          />
-          <Text style={styles.cafeTitle}>
-            {this.props.navigation.getParam("name")}
-          </Text>
-        </View>
-        <View style={styles.menuContainer}>
-          <Text style={{ fontSize: 15 }}>메뉴</Text>
-          <View style={styles.menuWrap}>
-            <View style={styles.menubox}>
-              <Image
-                source={{ uri: this.props.navigation.getParam("menuImg1") }}
-                style={styles.menuImageSize}
-              />
-              <Text>{this.props.navigation.getParam("menu1")}</Text>
-            </View>
-            <View style={styles.menubox}>
-              <Image
-                source={{ uri: this.props.navigation.getParam("menuImg2") }}
-                style={styles.menuImageSize}
-              />
-              <Text>{this.props.navigation.getParam("menu2")}</Text>
-            </View>
+        <ScrollView
+          bounces={false}
+          showsVerticalScrollIndicator={false}
+          snapToEnd={false}
+        >
+          <View style={styles.imageWrap}>
+            <Image
+              source={{ uri: this.props.navigation.getParam("uri") }}
+              style={styles.imageSize}
+            />
+            <Text style={styles.cafeTitle}>
+              {this.props.navigation.getParam("name")}
+            </Text>
+          </View>
+          <View style={styles.menuContainer}>
+            <Text style={styles.menuText}>메뉴</Text>
+            <View style={styles.menuWrap}>
+              <View style={styles.menubox}>
+                <Image
+                  source={{ uri: this.props.navigation.getParam("menuImg1") }}
+                  style={styles.menuImageSize}
+                />
+                <Text>{this.props.navigation.getParam("menu1")}</Text>
+              </View>
+              <View style={styles.menubox}>
+                <Image
+                  source={{ uri: this.props.navigation.getParam("menuImg2") }}
+                  style={styles.menuImageSize}
+                />
+                <Text>{this.props.navigation.getParam("menu2")}</Text>
+              </View>
 
-            <View style={styles.menubox}>
-              <Image
-                source={{ uri: this.props.navigation.getParam("menuImg3") }}
-                style={styles.menuImageSize}
-              />
-              <Text>{this.props.navigation.getParam("menu3")}</Text>
-            </View>
-            <View style={styles.menubox}>
-              <Image
-                source={{ uri: this.props.navigation.getParam("menuImg4") }}
-                style={styles.menuImageSize}
-              />
-              <Text>{this.props.navigation.getParam("menu4")}</Text>
+              <View style={styles.menubox}>
+                <Image
+                  source={{ uri: this.props.navigation.getParam("menuImg3") }}
+                  style={styles.menuImageSize}
+                />
+                <Text>{this.props.navigation.getParam("menu3")}</Text>
+              </View>
+              <View style={styles.menubox}>
+                <Image
+                  source={{ uri: this.props.navigation.getParam("menuImg4") }}
+                  style={styles.menuImageSize}
+                />
+                <Text>{this.props.navigation.getParam("menu4")}</Text>
+              </View>
             </View>
           </View>
-        </View>
+        </ScrollView>
         <View style={styles.buttonWrap}>
           <TouchableOpacity
             style={styles.button}
@@ -80,7 +93,11 @@ const styles = StyleSheet.create({
   menuContainer: {
     flex: 1,
     backgroundColor: "#fff",
-    marginBottom: 15,
+    marginBottom: 50,
+  },
+  menuText: {
+    fontWeight: "bold",
+    fontSize: 20,
   },
   menuWrap: {
     flex: 1,
@@ -88,7 +105,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     flexDirection: "row",
     padding: 12,
-    backgroundColor: "#333",
+    backgroundColor: "#fff",
   },
   menubox: {
     width: "50%",

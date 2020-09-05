@@ -7,6 +7,7 @@ import Detail from "../screens/detail";
 import Reservation from "../screens/reservation";
 import A from "../screens/a";
 import B from "../screens/b";
+import Confirm from "../screens/confirm";
 
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -74,6 +75,17 @@ const HomeStack = createStackNavigator({
   },
   Reservation: {
     screen: Reservation,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "예약하기",
+        headerBackTitleVisible: false,
+        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: "#94E2F7" },
+      };
+    },
+  },
+  Confirm: {
+    screen: Confirm,
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: "예약하기",
